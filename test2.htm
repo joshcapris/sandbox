@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>transform translate</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+<script type="text/javascript">
+
+$(function(){
+	console.log('test');
+	console.log($('.test img').eq(0).css('width'));
+	var w = 173;//half of square of width 276/2 
+
+	spin = 0;
+	
+	function rotate()
+	{
+		$('.test img').each(function(){
+			var indx = $('.test img').index(this);
+			indx = indx + spin;
+//			console.log(indx);
+			var opac = indx%4 == 0 ? 1 : 0.2;
+			console.log(opac + 't' + indx%360);
+			$(this).css({'-webkit-transform': 'rotateY(-'+ indx*90+'deg) translateZ('+ w + 'px)','opacity':opac});
+//			console.log('deg ' +indx*90);			
+		});	
+			spin++;		
+	}	
+	rotate();
+	
+	$('#btn').click(function(){
+			console.log('r');
+			rotate();
+
+	});
+	
+	
+});
+
+</script>
+
+</head>
+<body>
+<h1>transform translate effects</h1>
+<div class="test" style="position:relative;	border:1px solid #D3D3D3;width:300px;height:200px">
+	<img src="images/milo.jpg"/>
+	<img src="images/milo.jpg"/>	
+	<img src="images/milo.jpg"/>	
+	<img src="images/milo.jpg"/>		
+</div>
+
+<input id="btn" type="button" text="click" value="click"  />
+
+<!--
+
+
+<img src="images/milo.jpg"/>
+-->
+
+
+
+
+<style>
+body{
+font-stype:arial;
+}
+h1{
+
+}
+img {
+	border:1px solid #D3D3D3;
+	position:absolute;
+	transition:2s;
+	opacity:0.9;
+	-webkit-backface-visibility:hidden;
+
+/*	-webkit-transform: */
+}
+img:hover{
+
+}
+
+
+</style>
+</body>
+</html>
