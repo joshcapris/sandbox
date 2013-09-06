@@ -41,13 +41,14 @@ $(function(){
 </head>
 <body>
 <h1>transform translate effects</h1>
-<div class="test" style="position:relative;	border:1px solid #D3D3D3;width:300px;height:200px">
+<center>
+<div class="test" style="position:relative;	border:1px solid #D3D3D3;width:280px;height:200px;">
 	<img src="images/milo.jpg"/>
 	<img src="images/milo.jpg"/>	
 	<img src="images/milo.jpg"/>	
 	<img src="images/milo.jpg"/>		
 </div>
-
+</center>
 <input id="btn" type="button" text="click" value="click"  />
 
 <!--
@@ -61,7 +62,7 @@ $(function(){
 
 <style>
 body{
-font-stype:arial;
+font-family:arial,sans-serif;
 }
 h1{
 
@@ -71,7 +72,9 @@ img {
 	position:absolute;
 	transition:2s;
 	opacity:0.9;
-	-webkit-backface-visibility:hidden;
+	margin-left:-150px;/*to be centered in box*/
+	transition-timing-function: ease-out;
+	/*	-webkit-backface-visibility:hidden;*/
 
 /*	-webkit-transform: */
 }
