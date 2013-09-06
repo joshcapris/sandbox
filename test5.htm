@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>drop shadow example</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+<script type="text/javascript">
+
+$(function(){
+
+});
+
+</script>
+
+</head>
+<body>
+<h1>drop shadow example</h1>
+<br/>
+<a href="http://coding.smashingmagazine.com/2011/07/13/learning-to-use-the-before-and-after-pseudo-elements-in-css/">Pseudo code elements in css</a>
+<br/>
+
+
+<div class="drop lifted">
+	<p>Lifted Corners</p>
+</div>
+
+<!--
+
+
+<img src="images/milo.jpg"/>
+-->
+
+
+
+
+<style>
+body{
+font-family:arial,sans-serif;
+background-color:#FAF0D9;
+}
+h1{
+
+}
+div {
+display:block;
+}
+
+.drop {
+	position:relative;
+	background-color:#FFFFFF;
+	padding:1em;
+	width:300px;
+	margin:2em 10px 4em;
+	opacity:1;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop:before, .drop:after {
+	content: "";
+	position: absolute;
+	z-index: -2;
+}
+
+.drop p{
+text-align:center;
+}
+.lifted{
+-webkit-border-radius: 4px;
+border-radius: 4px;
+}
+
+.lifted:before {
+content: "";
+bottom: 15px;
+left: 10px;
+width: 50%;
+height: 20%;
+max-width: 300px;
+max-height: 100px;
+-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+transform: rotate(-3deg);
+border:1px solid blue;
+}
+
+.lifted:after {
+content:"";
+bottom: 15px;
+right: 10px; 
+left: auto;
+width: 50%;
+height: 20%;
+max-width: 300px;
+max-height: 100px;
+-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+-webkit-transform: rotate(3deg);
+-moz-transform: rotate(3deg);
+-ms-transform: rotate(3deg);
+-o-transform: rotate(3deg);
+transform: rotate(3deg);
+border:1px solid red;
+}
+
+
+
+
+</style>
+</body>
+</html>
