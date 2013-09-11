@@ -17,20 +17,25 @@ $(function(){
 <br/>
 <a href="http://coding.smashingmagazine.com/2011/07/13/learning-to-use-the-before-and-after-pseudo-elements-in-css/">Pseudo code elements in css</a>
 <br/>
+<code>border-radius: 0 0 120px 120px / 0 0 6px 6px</code>
+
+<div class="drop pseud">
+	<p>testing pseudo 1</p>
+</div>
+
+<div class="drop curled">
+	<p>curled corners</p>
+</div>
+
+<div class="drop perspective">
+	<p>perspective example</p>
+</div>
+
 
 
 <div class="drop lifted">
 	<p>Lifted Corners</p>
 </div>
-
-<!--
-
-
-<img src="images/milo.jpg"/>
--->
-
-
-
 
 <style>
 body{
@@ -69,40 +74,108 @@ border-radius: 4px;
 }
 
 .lifted:before {
-content: "";
-bottom: 15px;
-left: 10px;
-width: 50%;
-height: 20%;
-max-width: 300px;
-max-height: 100px;
--webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
--moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
--webkit-transform: rotate(-3deg);
--moz-transform: rotate(-3deg);
--ms-transform: rotate(-3deg);
--o-transform: rotate(-3deg);
-transform: rotate(-3deg);
-border:1px solid blue;
+	content: "";
+	bottom: 15px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	max-width: 300px;
+	max-height: 100px;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	border:1px solid blue;
 }
 
 .lifted:after {
-content:"";
-bottom: 15px;
-right: 10px; 
-left: auto;
-width: 50%;
-height: 20%;
-max-width: 300px;
-max-height: 100px;
--webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
--webkit-transform: rotate(3deg);
--moz-transform: rotate(3deg);
--ms-transform: rotate(3deg);
--o-transform: rotate(3deg);
-transform: rotate(3deg);
-border:1px solid red;
+	content:"";
+	bottom: 15px;
+	right: 10px; 
+	left: auto;
+	width: 50%;
+	height: 20%;
+	max-width: 300px;
+	max-height: 100px;
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	border:1px solid red;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+
+.pseud
+{
+	border-radius: 0 0 12px 12px;
+
+}
+.pseud:before{
+	content: "bef";
+	border:1px solid blue;
+	z-index:5;
+}
+.pseud:after{
+	content: "aft";
+	border:5px solid red;
+	z-index:5;
+}
+/********************************/
+
+.curled 
+{
+	border-radius: 0 0 120px 120px / 0 0 6px 6px;
+
+}
+.curled:before
+{
+	content: "";
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);	
+	width:50%;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);	
+	bottom: 15px;	
+	left: 10px;
+	height: 20%;
+/*	z-index:5;*/
+}
+.curled:after 
+{
+
+
+}
+/******************************/
+.perspective
+{
+
+
+}
+
+
+.perspective:after
+{
+	content:".";
+/*	z-index:5;*/
+	width:50%;
+	height:30%;
+	right:51px;
+	bottom:6px;
+	-webkit-box-shadow: 80px 0px 10px  rgba(0, 0, 0, 0.7);	
+	-webkit-transform: skew(-60deg,0deg);
+	-ms-transform: skew(-60deg,0deg);
+
+
 }
 
 
