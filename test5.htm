@@ -19,6 +19,10 @@ $(function(){
 <br/>
 <code>border-radius: 0 0 120px 120px / 0 0 6px 6px</code>
 
+<div class="drop myShadow">
+	<p>my Shadow<p>
+</div>
+
 <div class="drop pseud">
 	<p>testing pseudo 1</p>
 </div>
@@ -27,11 +31,17 @@ $(function(){
 	<p>curled corners</p>
 </div>
 
-<div class="drop perspective">
+<div id="test" class="drop perspective">
 	<p>perspective example</p>
 </div>
 
+<div class="drop singlev">
+	<p>single vertical example</p>
+</div>
 
+<div class="drop doublev">
+	<p>double vertical example</p>
+</div>
 
 <div class="drop lifted">
 	<p>Lifted Corners</p>
@@ -68,6 +78,36 @@ display:block;
 .drop p{
 text-align:center;
 }
+
+/* myShadow */
+
+.myShadow{
+
+}
+.myShadow:before{
+	content: '';
+	left:0px;
+	top:5px;
+/*	border:1px solid red;*/
+	box-shadow: -10px 0px 5px rgba(0, 0, 0, 0.5);
+/*	z-index:5;*/
+	width:50%;
+	height:90%;
+}
+.myShadow:after{
+	content: ' ';
+	top:5px;
+	right:0px;
+	height:90%;
+	width:50%;
+/*	z-index:5;
+	border:1px solid blue;
+*/	
+	box-shadow:10px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* end myShadow */
+
 .lifted{
 -webkit-border-radius: 4px;
 border-radius: 4px;
@@ -165,19 +205,50 @@ border-radius: 4px;
 
 .perspective:after
 {
-	content:".";
+	content:"";
 /*	z-index:5;*/
 	width:50%;
 	height:30%;
 	right:51px;
 	bottom:6px;
-	-webkit-box-shadow: 80px 0px 10px  rgba(0, 0, 0, 0.7);	
+	-webkit-box-shadow: 80px 0px 10px rgba(0, 0, 0, 0.7);	
 	-webkit-transform: skew(-60deg,0deg);
 	-ms-transform: skew(-60deg,0deg);
+}
 
+.singlev{}
+
+.singlev:after
+{
+	content:'';
+	-webkit-box-shadow:10px 0px 10px rgba(0, 0, 0, 0.7);
+	width:50%;	
+	height:90%;
+	bottom:5px;
+	right:0px;	
+/*	z-index:5;*/
 
 }
 
+
+.doublev:before{
+	content: "";
+	width:10%;
+	height:90%;
+	left:0px;
+	bottom:5px;
+	-webkit-box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.7);	
+/*	z-index: 5;*/
+}
+.doublev:after{
+	content: :"";
+/*	z-index:5;*/
+	width:10%;
+	height:90%;
+	right:0px;
+	bottom:5px;
+	-webkit-box-shadow: 10px 0px 5px rgba(0, 0, 0, 0.7);	
+}
 
 
 
