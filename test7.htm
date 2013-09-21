@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Angular JS example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script src="scripts/controllers/ListCtrl.js"></script>
+</head>
+<body ng-app>
+<div ng-controller="ListCtrl" class="container">
+    <h1>Angular JS example</h1>
+
+
+
+    <form class="form-inline">
+        <div class="">
+            <input type="text" ng-model="query" />
+            <button ng-click="search()" class="btn">Search</button>
+
+        </div>
+
+
+    </form>
+    <ul>
+        <li class='present-{{ person.present }}' ng-repeat="person in attendeeList | filter:query">
+            {{ person.name }}
+            <input ng-model="person.present" type="checkbox"/><button ng-click="removePerson($index)">Remove</button>
+        </li>
+    </ul>
+
+    <form class="">
+        <div class="add-user">
+            <input type="text" ng-model="newPerson"/>
+            <button ng-click="addPerson()" class="btn">Add person</button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+<style>
+    .present-true{
+        border:1px solid blue;
+    }
+
+
+</style>
+</html>
