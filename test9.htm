@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>center img css</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+<script type="text/javascript">
+
+$(function(){
+
+});
+
+</script>
+
+</head>
+<body>
+
+<h1>webkit animation and keyframes example</h1>
+
+	<img id="spin" src="images/wheel.svg"/>
+
+<style>
+body{
+	font-family:arial,sans-serif;
+}
+h1{
+
+}
+img {
+
+}
+img:hover{
+
+}
+
+#spin
+{
+/*	transition:1s;*/
+	position:relative;
+	animation:mymove 5s infinite;
+	-webkit-animation:mymove 6s infinite;
+	-webkit-animation-timing-function: linear;	
+}
+
+@-webkit-keyframes mymove
+{
+	from { 
+		-webkit-transform: rotate(0deg); 
+/*		top:0px;*/
+	}
+	to { 
+		-webkit-transform: rotate(360deg);
+/*		top:200px;*/
+	}
+}
+
+
+</style>
+</body>
+</html>
