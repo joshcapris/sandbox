@@ -1,0 +1,62 @@
+<html>
+<head>
+<title></title>
+
+</head>
+<body>
+
+<h1>More animations example</h1>
+<div id="bird">
+      <img src="images/bird-legs.svg" alt="Twitter bird legs" id="bird-legs">  
+      <img src="images/bird-headbody.svg" alt="Twitter bird body" id="bird-headbody">
+      <img src="images/bird-wing.svg" alt="Twitter bird wing" id="bird-wing">
+  </div>
+  
+  <style>
+
+#bird {
+  float:left;
+  position:relative;
+/*  border:1px solid red;*/
+  margin: 0 0 20px 20px;
+}
+  
+  #bird img {
+  position:absolute;
+/*  border:1px solid blue;*/
+
+  
+  }
+  
+  #bird-legs
+  {
+	top:80px;
+	left:45px;
+  }
+  #bird-headbody {
+	-webkit-animation: birdHead 1s infinite alternate;
+  }
+  
+@-webkit-keyframes birdHead
+{
+	from {	-webkit-transform: rotateZ(0deg); }
+	to { -webkit-transform: rotateZ(15deg);}
+}  
+  
+  #bird-wing {
+  -webkit-animation: birdWing 1s infinite alternate;
+  }
+@-webkit-keyframes birdWing
+{
+	from { 
+		-webkit-transform: rotateZ(0deg);
+	}
+	to { 
+		-webkit-transform: rotateZ(10deg);
+	}
+}  
+  
+  
+  </style>
+</body>
+</html>
