@@ -16,6 +16,29 @@ $(function(){
 
 <h1>webkit animation and keyframes example</h1>
 
+
+<pre>
+#spin
+{
+	width:25%;
+	position:relative;
+	animation:mymove 5s infinite;
+	-webkit-animation:mymove 5s infinite;
+	-webkit-animation-timing-function: linear;	
+}
+
+@-webkit-keyframes mymove
+{
+	from { 
+		-webkit-transform: rotate(0deg); 
+	}
+	to { 
+		-webkit-transform: rotate(360deg);
+	}
+}
+</pre>
+
+
 	<img id="spin" src="images/wheel.svg"/>
 
 <style>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Text css styles example</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+</head>
+<body>
+<h1>Text css styles example</h1>
+
+<pre>
+h2 { text-shadow: 1px 1px 5px #555555; }	
+</pre>
+<h2 style="text-shadow: 1px 1px 5px #555555;">THIS style will be edited</h2>
+
+<pre>
+h2 { text-shadow: 5px 5px 5px #555555; }	
+</pre>
+<h2 style="text-shadow: 5px 5px 5px #555555;">THIS style will be edited</h2>
+
+<pre>
+h2 { text-shadow: 3px 3px 5px rgba(255,0,0,0.5); }	
+</pre>
+<h2 style="text-shadow: 3px 3px 5px rgba(255,0,0,0.5);">THIS style will be edited</h2>
+
+
+<pre>
+h2 {
+	color: #000000;
+	-webkit-text-fill-color: #FFFFFF; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+	text-shadow: 5px 5px 5px rgba(85, 85, 85, 0.5);
+}
+
+</pre>
+<h2 style="color: #000000; -webkit-text-fill-color: #FFFFFF; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;text-shadow: 5px 5px 5px rgba(85, 85, 85, 0.5);">THIS style will be edited</h2>
+<pre>
+animation
+</pre>
+<h2 id="hov">THIS style will be edited</h2>
+
+
+  
+<style>
+
+body{
+	background-color: #dcdcdc;
+	font-family: arial,sans-serif;
+}
+
+
+h2 {
+	color:#000000;
+}
+
+
+#hov {
+
+	-webkit-transition:5s;
+	-webkit-animation: myAnim 5s infinite ease;	
+	position:relative;	
+	transition:5s;
+	animation: myAnim 5s infinite ease;
+}
+@-webkit-keyframes myAnim
+{
+/*
+	0%   {top:0px; left:0px; background:red;}
+	25%  {top:0px; left:100px; background:blue;}
+	50%  {top:100px; left:100px; background:yellow;}
+	75%  {top:100px; left:0px; background:green;}
+	100% {top:0px; left:0px; background:red;}
+*/
+
+	0% { text-shadow:0px 0px 0px rgba(255,0,0,0.5); }
+	50% { text-shadow:3px 3px 10px rgba(255,0,0,0.5); }
+	100%{ text-shadow:6px 6px 20px rgba(255,0,0,0.5); }
+
+}
+
+@keyframes myAnim
+{
+	0% { text-shadow:none;}
+	50% { text-shadow:3px 3px 3px rgba(255,0,0,0.5); }
+	100%{ text-shadow:3px 3px 6px rgba(255,0,0,0.5); }
+}
+
+
+
+  
+</style>
+
+</body>
+</html>
