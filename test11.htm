@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Animation example 2</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+<script type="text/javascript">
+
+$(function(){
+});
+
+</script>
+
+</head>
+<body>
+<h1>Animation example</h1>
+<code>testing percent animation with translate3d(0,0,0)</code>
+<br/>
+<img id="test" src="images/start-arrow-2.png"/>
+
+
+<style>
+body{
+font-family:arial,sans-serif;
+}
+h1{
+
+}
+#test {
+
+	-webkit-animation: 1.2s ease 0s normal forwards infinite rotate-wiggle-clockwise;
+	-moz-animation: 1.2s ease 0s normal forwards infinite rotate-wiggle-clockwise;	
+}
+
+@-webkit-keyframes rotate-wiggle-clockwise {
+    0%     { -webkit-transform: translate3d(0,0,0)      rotate(0deg);   -webkit-transform-origin: left top; }
+    8%     { -webkit-transform: translate3d(1px,1px,0)  rotate(20deg);  -webkit-transform-origin: left top; }
+    16%    { -webkit-transform: translate3d(0,0,0)      rotate(0deg);   -webkit-transform-origin: left top; }
+    24%    { -webkit-transform: translate3d(1px,1px,0)  rotate(20deg);  -webkit-transform-origin: left top; }
+    32%    { -webkit-transform: translate3d(0,0,0)      rotate(0deg);   -webkit-transform-origin: left top; }
+    40%    { -webkit-transform: translate3d(1px,1px,0)  rotate(20deg);  -webkit-transform-origin: left top; }
+    48%    { -webkit-transform: translate3d(0,0,0)      rotate(0deg);   -webkit-transform-origin: left top; }
+    100%   { -webkit-transform: translate3d(0,0,0)      rotate(0deg);   -webkit-transform-origin: left top; }
+}
+@-moz-keyframes rotate-wiggle-clockwise {
+    0%     { -moz-transform: translate3d(0,0,0)      rotate(0deg);   -moz-transform-origin: left top; }
+    8%     { -moz-transform: translate3d(1px,1px,0)  rotate(20deg);  -moz-transform-origin: left top; }
+    16%    { -moz-transform: translate3d(0,0,0)      rotate(0deg);   -moz-transform-origin: left top; }
+    24%    { -moz-transform: translate3d(1px,1px,0)  rotate(20deg);  -moz-transform-origin: left top; }
+    32%    { -moz-transform: translate3d(0,0,0)      rotate(0deg);   -moz-transform-origin: left top; }
+    40%    { -moz-transform: translate3d(1px,1px,0)  rotate(20deg);  -moz-transform-origin: left top; }
+    48%    { -moz-transform: translate3d(0,0,0)      rotate(0deg);   -moz-transform-origin: left top; }
+    100%   { -moz-transform: translate3d(0,0,0)      rotate(0deg);   -moz-transform-origin: left top; }
+}
+
+</style>
+</body>
+</html>

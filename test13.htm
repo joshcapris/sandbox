@@ -1,0 +1,61 @@
+"<html>
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+</head>
+<body>
+
+<h1>text example</h1>
+
+<div id="test" style="">
+<img src="images/duj.png"/>
+<img id="o" src="images/o.png"/>
+	<div id="urout">
+		<img id="ur" src="images/ur.png"/>
+	</div>
+</div>
+<style>
+body {
+background-color: #dcdcdc;
+}
+#test {
+margin:0 auto;
+border:1px solid red;
+padding:5px;
+vertical-align:top;
+}
+
+#test img{
+vertical-align:top;
+position:relative;
+border:1px solid red;
+}
+
+#o {
+-webkit-animation: oturn 6s ease-in-out;
+-webkit-animation-delay:2s;
+-webkit-animation-iteration-count:3;
+
+}
+#ur{
+position:absolute;
+}
+
+#urout
+{
+	-webkit-perspective:300;
+	position:relative;
+}
+
+@-webkit-keyframes oturn
+{
+0% { -webkit-transform: rotateY(0deg);}
+50% { -webkit-transform: rotateY(180deg);}
+100% { -webkit-transform: rotateY(360deg);}
+}
+
+
+
+</style>
+</body>
+</html>
