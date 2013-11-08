@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Animations Example</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+
+
+</head>
+<body>
+<h1>Animations Example</h1>
+<pre>
+{
+	-webkit-animation: myAnimate .2s steps(1) infinite;
+}
+
+</pre>
+
+<div id="wrapper">
+	<!-- -->
+</div>
+  
+  
+<style>
+body 
+{
+    background-color:#DCDCDC;
+}
+
+#wrapper {
+	border:1px solid red;
+	background-image: url('images/titles-stacked.png');
+	background-repeat:no-repeat;
+	background-position:0px 0px;
+	height:333px;
+	-webkit-animation: myAnimate .2s steps(1) infinite;
+}
+
+@-webkit-keyframes myAnimate
+{
+	0% {
+		background-position:left top;
+	}
+	50%{
+		background-position:left bottom;
+	}
+}
+
+
+
+  
+</style>
+
+</body>
+</html>

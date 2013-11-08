@@ -18,7 +18,7 @@
 </pre>
 
 
-    <i style="font-size:2em;color:blue" class="social foundicon-facebook"></i>  
+    <i id="test" style="font-size:2em;" class="social foundicon-facebook"></i>  
 
   
   
@@ -27,7 +27,16 @@
 body 
 {
     background-color:#dcdcdc;
-    }
+}
+#test {
+	opacity:0.1;
+	color:#3B5998;	
+	transition:1s ease opacity;
+}
+
+#test:hover {
+	opacity: 1;
+}
 
 
   
