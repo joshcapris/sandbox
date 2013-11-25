@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Translate Examples</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+
+</head>
+<body>
+<h1>Translate Examples</h1>
+<pre>
+
+</pre>
+
+
+	<img id="milo" style="border:5px solid blue" src="images/milo.jpg"/>
+<br/>
+  
+<a id="test" href="javascript:void(0);">translateX(20px), border transition to red</a>  <br/>
+<i>
+{
+	transition: border 3s; 
+	transform: translate3d(20px,0px,0px);
+	border:5px solid red;
+}
+</i>  
+<br/>
+<a id="test2" href="javascript:void(0);">transition to translate3d(50px,50px)</a>  <br/>
+  
+<style>
+  
+</style>
+
+<script type="text/javascript">
+$(function(){
+	$('#test').on('click',function(){
+		$('#milo').css({'transition':'border 3s', '-webkit-transform':'translate3d(20px,0px,0px)','border':'5px solid red'});		
+		console.log('test');
+	});
+
+	$('#test2').on('click',function(){
+		$('#milo').css({'transition':'-webkit-transform 3s', '-webkit-transform':'translate3d(50px,50px,50px)'});		
+		console.log('test');
+	});	
+	
+	
+});
+</script>
+
+
+
+</body>
+</html>
