@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Parallax Example</title>
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">	
+	
+</head>
+<body>
+<h1 >Parallax Example</h1>
+<hr/>
+
+<ul id="scene" style="border:5px solid #000000">
+	<li class="layer" style="border:1px solid red;" data-depth="0"><div style="border-radius:70px;width:150px;background-color:red;height:150px"></div></li>
+	<li class="layer" style="border:1px solid blue;" data-depth="0.3" ><div style="border-radius:50px;width:100px;background-color:blue;height:100px"></div></li>	
+	<li class="layer" style="border:1px solid green;" data-depth="0.6"><div style="border-radius:200px;width:400px;background-color:green;height:400px"></div></li>	
+	<li class="layer" style="border:1px solid orange;" data-depth="1"><div style="border-radius:50px;width:100px;background-color:orange;height:100px"></div></li>		
+<!-- 	<li class="layer" style="border:1px solid red" data-depth="0"><img src="images/milo.jpg" /></li>
+	<li class="layer" style="border:1px solid blue" data-depth="0.3" ><img src="images/milo_small.jpg"/></li>	
+	<li class="layer" style="border:1px solid green" data-depth="0.6"><img src="images/milo.jpg"/></li>	
+	<li class="layer" style="border:1px solid orange" data-depth="1"><img src="images/milo_small.jpg"/></li>		 -->
+</ul>
+
+<hr/>
+
+<style>
+body
+{
+
+}
+#scene {
+	margin:0 auto;
+	max-width:800px;
+	padding:0;
+}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript">
+$(function(){
+	console.log('test');
+	
+	$('#scene').parallax();
+	$('#scene').parallax('invert', false, false); //x, y
+	$('#scene').scalar(2,8);
+	
+	
+});
+
+</script>
+</body>
+</html>
