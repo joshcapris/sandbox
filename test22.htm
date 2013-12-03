@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>test</title>
+
+</head>
+<body>
+<h1>Absolute vs Relative Example</h1>
+<p>An absolute position element is positioned relative to the first parent element that has a position other than static. If no such element is found, the containing block is &lt;html&gt;</p>
+<p>position:Absolute with top:0px would start from top:left where as position:relative with top:0px would start from the natural position it would exist</p>
+<p>Usually positioning is used in conjunction with top or left attributes</p>
+
+
+<div class="test" style="position:relative;padding:10px;border:1px solid blue">
+
+	<div class="bg">
+	test
+	</div>
+	<div class="bg" style="position:relative;top:0px">
+	test2
+	</div>
+	<div class="bg" style="position:absolute;top:0px;">
+	test3
+	</div>
+
+</div>
+
+
+<style>
+body{
+	font-family:arial,sans-serif;
+
+}
+h1{
+
+}
+.bg 
+{
+	border:1px solid red;
+}
+
+
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script type="text/javascript">
+$(function(){
+	console.log('test');
+});
+</script>
+
+</body>
+</html>
