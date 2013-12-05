@@ -1,21 +1,29 @@
 <html>
 <head>
-<title></title>
+<title>Multiple Transition Example</title>
 
 </head>
 <body>
-<h1>Example</h1>
-
-<div class="test" style="position:relative;padding:10px;border:1px solid blue">
-
-	<div id="test1" class="bg" style="z-index:2">
-		<center>TEST1</center>
+<h1>Multiple Transition Example</h1>
+<div id="container">
+	<div class="test" style="position:relative;padding:10px;border:1px solid blue">
+		<div id="test1" class="bg" style="z-index:2">
+			<center>TEST1</center>
+		</div>
+		<div id="test2" class="bg over" style="position:absolute;opacity:0;z-index:-1">
+			<center>&nbsp;</center>
+		</div>
 	</div>
-	<div id="test2" class="bg over" style="position:absolute;opacity:0;z-index:-1">
-		<center>&nbsp;</center>
-	</div>
 
-</div>
+	<div class="test" style="position:relative;padding:10px;border:1px solid blue">
+		<div id="test4" class="bg" style="z-index:2">
+			<center>TEST2</center>
+		</div>
+		<div id="test5" class="bg over" style="position:absolute;opacity:0;z-index:-1">
+			<center>&nbsp;</center>
+		</div>
+	</div>
+</div> <!-- end container -->
 
 
 <style>
@@ -46,14 +54,13 @@ h1{
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
 <script type="text/javascript">
 $(function(){
-	console.log('test');	
 	$('.bg').mouseenter(function(){
-		$('.over').css({'transition':'0.5s  margin-left,0.5s  width','opacity':'1','top':'10px','width':'60px','margin-left':'0px','height':'20px'});
+		indx = $('.bg').index(this);
+		indx = indx/2;
+		$('.over').eq(indx).css({'transition':'0.5s  margin-left,0.5s  width','opacity':'1','top':'10px','width':'60px','margin-left':'0px','height':'20px'});
 	}).mouseleave(function(){
-		$('.over').css({'transition':'0.5s  margin-left,0.5s  width,0.5s height,0.5s top,0.5s opacity','opacity':'0','top':'15px','width':'0px','margin-left':'30px','height':'0%'});
-	});
-	
-	
+		$('.over').eq(indx).css({'transition':'0.5s  margin-left,0.5s  width,0.5s height,0.5s top,0.5s opacity','opacity':'0','top':'15px','width':'0px','margin-left':'30px','height':'0%'});
+	});	
 });
 </script>
 
