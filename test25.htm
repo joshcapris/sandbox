@@ -2,33 +2,61 @@
 <head>
     <title>Skrollr Parallax Example</title>
 
-	</head>
+</head>
 <body>
     <h1>Skrollr Parallax Example</h1>
-		<code>http://prinzhorn.github.io/skrollr/</code><br/>
+    <code>http://prinzhorn.github.io/skrollr/</code><br />
+
+    <div class="section">
+        <h1 style="opacity:0;margin-left:100%">SECTION1</h1>
+    </div>
+    <div class="section">
+        <h1 data-0="opacity:0;margin-left:100%" data-500="opacity:1;margin-left:0px">SECTION2</h1>
+    </div>
+    <div class="section">
+        <h1 data-500="opacity:0;margin-left:100%" data-1000="opacity:1;margin-left:0px">SECTION3</h1>
+    </div>
+    <div class="section">
+        <h1 data-1000="opacity:0;margin-left:100%" data-1500="opacity:1;margin-left:0px">SECTION4</h1>
+    </div>
+    <div class="section">
+        <h1 data-1500="opacity:0;margin-left:100%" data-2000="opacity:1;margin-left:0px">SECTION5</h1>
+    </div>
+    <div class="section">
+        <h1 data-0="opacity:0;margin-left:100%" data-top="opacity:1;margin-left:0px">SECTION6 TOP BOTTOM</h1>
+    </div>
+    <div class="section">
+    </div>
+    <div class="section">
+    </div>
 
 
     <style>
-        body
-        {
+        body {
         }
-		a, a:hover {
 
-		}
-		
+        a, a:hover {
+        }
 
+        .section {
+            padding: 20px;
+            margin-top: 10px;
+            border: 1px solid #E33F52;
+            min-height: 500px;
+        }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+    <script src="js/skrollr.min.js"></script>
     <script type="text/javascript">
         $(function () {
+            console.log('hello world!');
 
+            $('.section h1').eq(0).css({ 'transition': '1s ease', 'opacity': '1', 'margin-left': '0px' });
 
-            $('#scene').parallax();
-            //$('#scene').parallax('invert', true, true); //x, y
-            $('#scene').scalar(2, 8);
-
-
+            skrollr.init({
+                smoothScrolling: true,
+                forceHeight: true
+            });
         });
 
     </script>
