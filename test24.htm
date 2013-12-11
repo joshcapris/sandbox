@@ -1,56 +1,57 @@
 <html>
 <head>
-<title>Parallax Vertical Example</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-     <!--[if lt IE 9]>
+    <title>Parallax Vertical Example</title>
+    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <!--[if lt IE 9]>
           <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
      <![endif]-->
 </head>
-<body>
-<h1>Parallax Vertical Example</h1>
-<div id="container">
-
-
-<div id="test1" class="test">
-</div>
-<div id="test2" class="test">
-</div>
-<div id="test3" class="test">
-</div>
-<div id="test4" class="test">
-</div>
-
-
-</div> <!-- end container -->
-<style>
-body
-{
-
-}
-h1{
-
-}
-.bg 
-{
-
-}
-
-.test
-{
-	border:5px solid red;
-	min-height:700px;
-}
-
-</style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
-<script type="text/javascript">
-$(function(){
-
-});
-</script>
-
+<body style="border: 1px solid #DCDCDC">
+    <h1>
+        Skrollr Parallax Example</h1>
+    <code>http://prinzhorn.github.io/skrollr/</code><br />
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    spacer<br>
+    <div id="foo" data-0="background-color:rgb(0,0,255);transform:rotate(0deg)" data-500="background-color:rgb(255,0,0);transform:rotate(360deg)">
+        WOOOT</div>
+			<div style="background-color:red;border-radius:50px;width:100px;height:100px;position:relative;" data-0="transform:translate3d(500px,0px,0px);" data-300="transform: translate3d(0px,-100px,0px);" ></div>		
+			<div style="background-color:red;border-radius:50px;width:100px;height:100px;position:relative;" data-0="left:50%;" data-300="left:100%;" ></div>		
+    <style>
+        
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            skrollr.init({
+                smoothScrolling:true,
+                forceHeight:true
+            });
+        });
+    </script>
 </body>
 </html>

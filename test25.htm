@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Skrollr Parallax Example</title>
+
+	</head>
+<body>
+    <h1>Skrollr Parallax Example</h1>
+		<code>http://prinzhorn.github.io/skrollr/</code><br/>
+
+
+    <style>
+        body
+        {
+        }
+		a, a:hover {
+
+		}
+		
+
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+
+            $('#scene').parallax();
+            //$('#scene').parallax('invert', true, true); //x, y
+            $('#scene').scalar(2, 8);
+
+
+        });
+
+    </script>
+</body>
+</html>
