@@ -6,7 +6,6 @@
 <body>
     <h1>Skrollr Parallax Example</h1>
     <code>http://prinzhorn.github.io/skrollr/</code><br />
-
     <div class="section">
         <h1 style="opacity:0;margin-left:100%">SECTION1</h1>
     </div>
@@ -23,13 +22,26 @@
         <h1 data-1500="opacity:0;margin-left:100%" data-2000="opacity:1;margin-left:0px">SECTION5</h1>
     </div>
     <div class="section">
-        <h1 data-0="opacity:0;margin-left:100%" data-top="opacity:1;margin-left:0px">SECTION6 TOP BOTTOM</h1>
+        <h1 data-start="opacity:0;margin-left:100%" data-top="opacity:1;margin-left:0px">SECTION6 TOP</h1><br/>
+		//data-top
     </div>
     <div class="section">
+        <h1 data-0="opacity:0;margin-left:100%" data-50-top="opacity:0.5;margin-left:0px" data-200-top="opacity:1;margin-left:0%;" >SECTION7 ???</h1>	<br/>
+		//data-200-top
     </div>
-    <div class="section">
+    <div class="section" style="">
+        <h1 
+			data-0p-top="opacity:0.8;margin-left:0px;margin-top:0px;" 
+			data-10p-top="opacity:0.8;margin-left:0px;margin-left:300px" >SECTION8 PERCENTAGE</h1>	<br/>
     </div>
-
+    <div class="section" style="">
+        <h1
+			data-bottom="transform: rotate(0deg);margin-top:100px"
+			data-top="transform: rotate(360deg)">SECTION9 ROTATE</h1><br/>
+			//data-bottom to data-top
+    </div>
+	
+	
 
     <style>
         body {
