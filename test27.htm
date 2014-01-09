@@ -73,43 +73,60 @@
 			100% { border:5px solid black; display:none;	}
 		}		
 
+		@-moz-keyframes mySlide
+		{
+			from { margin-left:-300px; }
+			to { margin-left:0px;	}
+		}
+		@-moz-keyframes myHide
+		{
+			0% { border:1px solid red; }
+			100% { border:5px solid black; display:none;	}
+		}		
+		
+		
+		
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		//init
 		$('.panel').css({'display':'none'});
-
 		$('.panel').eq(0).css({'display':'block'});	
-		//$('.panel').eq(0).css({'animation':'myHide 1s linear 1','-webkit-animation-fill-mode':'forwards'});			
+
 		
 		zindx = 1;
-		lastIndex = -1;
+		currentIndex = 0;
+		lastIndex = -1;		
+		clicks = [];
 		
 		$('#move li a').on('click', function(){
-			var indx = $('#move li a').index($(this));
+			var indx = $('#move li a').index($(this));			
+			console.log('too fast?');
 			if(lastIndex >= 0)
 			{
 				$('.panel').eq(lastIndex).css('z-index','0');
 				
 			}		
 			$('.panel').eq(indx).css({'display':'block','z-index':'1'});
-			$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease'});													
-			//$('.panel').eq(Math.max(lastIndex,0)).css({'transition':'display 1s ease','display':'none'});			
-			
-			//now hide last div somehow??
-			//after animation done set last index display to none and remove z-index for current index 
-			
-			
-			//$('.panel').eq(Math.max(lastIndex,0)).delay(5000).css('display','none');						
-			
-			console.log('testmax'+ Math.max(lastIndex,0));			
+			$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});													
 
+/*			
+			console.log('testmax'+ Math.max(lastIndex,0));			
 			console.log('test'+ indx);
 			console.log('ztest'+ zindx);			
-			lastIndex = indx;			
-			
+*/			
+			clicks.push(indx);
+			currentIndex = indx;
 		});
+		$('.panel').on('animationend webkitAnimationEnd',function(event){
+			lastIndex = clicks.pop();
+			$('.panel').eq(Math.max(lastIndex,0)).css('display','none');
+			$('.panel').eq(Math.max(currentIndex,0)).removeAttr('style');			
+			lastIndex = currentIndex;
+			console.log('tester' + lastIndex);
+		});
+
 	});
 	</script>
 </body>
