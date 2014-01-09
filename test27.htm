@@ -12,12 +12,14 @@
 <li><a href="javascript:void(0);">grey</a></li>
 </ul>
 <br/>
-<div class="panel red"><p>top to bottom</p></div>
-<div class="panel blue"><p>left to right</p></div>
-<div class="panel teal"><p>right to left</p></div>
-<div class="panel purple"><p>bottom to top</p></div>
-<div class="panel grey"><p>fade in</p></div>
-	
+<div class="wrapper">
+
+	<div class="panel red"><p>top to bottom</p></div>
+	<div class="panel blue"><p>left to right</p></div>
+	<div class="panel teal"><p>right to left</p></div>
+	<div class="panel purple"><p>bottom to top</p></div>
+	<div class="panel grey"><p>fade in</p></div>
+</div>	
     <style>
         body {
         }
@@ -62,17 +64,46 @@
 		{
 			display:inline-block;
 		}
+		.wrapper {
+			padding:10px;
+			border:1px solid #dcdcdc;
+			
+		
+		}
 		@-webkit-keyframes mySlide
 		{
 			from { margin-left:-300px; }
 			to { margin-left:0px;	}
 		}
+		
+		@-webkit-keyframes mySlideTB
+		{
+			from { margin-top:-200px; }
+			to { margin-top:0px;	}
+		}
+		
+		@-webkit-keyframes mySlideBT
+		{
+			from { margin-top:300px; }
+			to { margin-top:0px;	}
+		}		
+		
+		@-webkit-keyframes mySlideRL
+		{
+			from { margin-left:300px; }
+			to { margin-right:0px;	}
+		}		
+				
+		
 		@-webkit-keyframes myHide
 		{
 			0% { border:1px solid red; }
 			100% { border:5px solid black; display:none;	}
 		}		
 
+		
+		
+		//firefox
 		@-moz-keyframes mySlide
 		{
 			from { margin-left:-300px; }
@@ -96,7 +127,7 @@
 		
 		zindx = 1;
 		currentIndex = 0;
-		lastIndex = -1;		
+		lastIndex = 0;		
 		clicks = [];
 		
 		$('#move li a').on('click', function(){
@@ -109,7 +140,7 @@
 			}
 			else
 			{
-			console.log(clicks);
+				console.log(clicks);
 				return;
 			}
 			if(lastIndex >= 0)
@@ -118,7 +149,17 @@
 			}
 			
 			$('.panel').eq(indx).css({'display':'block','z-index':'1'});
-			$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});													
+			
+			if(indx == 0)
+				$('.panel').eq(indx).css({'-webkit-animation':'mySlideTB 1s ease','-moz-animation':'mySlideTB 1s ease'});
+			else if(indx == 1)
+				$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});			
+			else if(indx == 2)
+				$('.panel').eq(indx).css({'-webkit-animation':'mySlideRL 1s ease','-moz-animation':'mySlideRL 1s ease'});				
+			else if(indx == 3)
+				$('.panel').eq(indx).css({'-webkit-animation':'mySlideBT 1s ease','-moz-animation':'mySlideBT 1s ease'});								
+			else if(indx == 4)				
+				$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});													
 
 		});
 		$('.panel').on('animationend webkitAnimationEnd',function(event){
