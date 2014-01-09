@@ -12,13 +12,23 @@
 <li><a href="javascript:void(0);">grey</a></li>
 </ul>
 <br/>
+
+
+
+<br/><br/><br/>
+
 <div class="wrapper">
 
-	<div class="panel red"><p>top to bottom</p></div>
-	<div class="panel blue"><p>left to right</p></div>
-	<div class="panel teal"><p>right to left</p></div>
-	<div class="panel purple"><p>bottom to top</p></div>
-	<div class="panel grey"><p>fade in</p></div>
+
+	<div class="panel red"><br/><br/><p>top to bottom</p></div>
+	<div class="panel blue"><br/><br/><p>left to right</p></div>
+	<div class="panel teal"><br/><br/><p>right to left</p></div>
+	<div class="panel purple"><br/><br/><p>bottom to top</p></div>
+	<div class="panel grey"><br/><br/><p>fade in</p></div>
+	<div class="panelLast" style="">
+		<div class="" style="border-radius:10px;width:20px;height:20px;background-color:#E8E8E8 ;border:1px solid #E8E8E8;position:absolute;z-index:1;margin-left:150px"></div>	
+	</div>
+
 </div>	
     <style>
         body {
@@ -26,7 +36,7 @@
 
         a, a:hover {
         }
-		.panel{
+		.panel, .panelLast {
 			border:1px solid #dcdcdc;
 			width:300px;
 			height:200px;
@@ -35,11 +45,12 @@
 			position:absolute;
 			transition:1s ease;
 		}
-		.panel p
+		.panel p, .panelLast p
 		{
 			margin:0 auto;
 			
 		}
+
 		.red
 		{
 			background-color:#E54B4B;			
