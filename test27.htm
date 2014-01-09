@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Experiment Example</title>
+</head>
+<body>
+    <h1>Experiment Example</h1>
+<ul id="move">
+<li><a href="javascript:void(0);">red</a></li>
+<li><a href="javascript:void(0);">blue</a></li>
+<li><a href="javascript:void(0);">teal</a></li>
+<li><a href="javascript:void(0);">purple</a></li>
+<li><a href="javascript:void(0);">grey</a></li>
+</ul>
+<br/>
+<div class="panel red"><p>top to bottom</p></div>
+<div class="panel blue"><p>left to right</p></div>
+<div class="panel teal"><p>right to left</p></div>
+<div class="panel purple"><p>bottom to top</p></div>
+<div class="panel grey"><p>fade in</p></div>
+	
+    <style>
+        body {
+        }
+
+        a, a:hover {
+        }
+		.panel{
+			border:1px solid #dcdcdc;
+			width:300px;
+			height:200px;
+			padding:10px;
+			text-align: center;
+			position:absolute;
+			transition:1s ease;
+		}
+		.panel p
+		{
+			margin:0 auto;
+			
+		}
+		.red
+		{
+			background-color:#E54B4B;			
+		}
+		.blue
+		{
+			background-color:#0082C8;
+		}
+		.teal
+		{
+			background-color:#146F73;
+		}
+		.purple
+		{
+			background-color:#72616E;		
+		}
+		.grey
+		{
+			background-color:#C8C8C8;
+		}
+		li
+		{
+			display:inline-block;
+		}
+		@-webkit-keyframes mySlide
+		{
+			from { margin-left:-300px; }
+			to { margin-left:0px;	}
+		}
+		@-webkit-keyframes myHide
+		{
+			0% { border:1px solid red; }
+			100% { border:5px solid black; display:none;	}
+		}		
+
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//init
+		$('.panel').css({'display':'none'});
+
+		$('.panel').eq(0).css({'display':'block'});	
+		//$('.panel').eq(0).css({'animation':'myHide 1s linear 1','-webkit-animation-fill-mode':'forwards'});			
+		
+		zindx = 1;
+		lastIndex = -1;
+		
+		$('#move li a').on('click', function(){
+			var indx = $('#move li a').index($(this));
+			if(lastIndex >= 0)
+			{
+				$('.panel').eq(lastIndex).css('z-index','0');
+				
+			}		
+			$('.panel').eq(indx).css({'display':'block','z-index':'1'});
+			$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease'});													
+			//$('.panel').eq(Math.max(lastIndex,0)).css({'transition':'display 1s ease','display':'none'});			
+			
+			//now hide last div somehow??
+			//after animation done set last index display to none and remove z-index for current index 
+			
+			
+			//$('.panel').eq(Math.max(lastIndex,0)).delay(5000).css('display','none');						
+			
+			console.log('testmax'+ Math.max(lastIndex,0));			
+
+			console.log('test'+ indx);
+			console.log('ztest'+ zindx);			
+			lastIndex = indx;			
+			
+		});
+	});
+	</script>
+</body>
+</html>
