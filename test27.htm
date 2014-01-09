@@ -93,7 +93,6 @@
 		//init
 		$('.panel').css({'display':'none'});
 		$('.panel').eq(0).css({'display':'block'});	
-
 		
 		zindx = 1;
 		currentIndex = 0;
@@ -102,31 +101,39 @@
 		
 		$('#move li a').on('click', function(){
 			var indx = $('#move li a').index($(this));			
-			console.log('too fast?');
+			if(lastIndex == -1 || clicks.length == 0)
+			{	
+				if(lastIndex == indx || clicks.length > 0)
+					return;			
+				clicks.push(indx);						
+			}
+			else
+			{
+			console.log(clicks);
+				return;
+			}
 			if(lastIndex >= 0)
 			{
-				$('.panel').eq(lastIndex).css('z-index','0');
-				
-			}		
+				$('.panel').eq(lastIndex).css('z-index','0');				
+			}
+			
 			$('.panel').eq(indx).css({'display':'block','z-index':'1'});
 			$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});													
 
-/*			
-			console.log('testmax'+ Math.max(lastIndex,0));			
-			console.log('test'+ indx);
-			console.log('ztest'+ zindx);			
-*/			
-			clicks.push(indx);
-			currentIndex = indx;
 		});
 		$('.panel').on('animationend webkitAnimationEnd',function(event){
-			lastIndex = clicks.pop();
+			clearPanel();
+		});
+		
+		function clearPanel()
+		{
 			$('.panel').eq(Math.max(lastIndex,0)).css('display','none');
+			currentIndex = clicks.pop();
 			$('.panel').eq(Math.max(currentIndex,0)).removeAttr('style');			
 			lastIndex = currentIndex;
-			console.log('tester' + lastIndex);
-		});
-
+			console.log('tester' + lastIndex);		
+			console.log('clicks ' + clicks);					
+		}
 	});
 	</script>
 </body>
