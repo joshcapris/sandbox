@@ -235,9 +235,11 @@
             currentIndex = 0;
             lastIndex = -1;
             clicks = [];
+            panel = $('.panel');
+            nav = $('#move li a');
 
-            $('#move li a').on('click', function () {
-                var indx = $('#move li a').index($(this));
+            nav.on('click', function () {
+                var indx = nav.index($(this));
                 if (lastIndex == -1)
                     lastIndex = 0;
                 if (clicks.length == 0) {
@@ -250,11 +252,11 @@
                     return;
                 }
                 if (lastIndex > -1) {
-                    $('.panel').eq(lastIndex).css('z-index', '0');
+                    panel.eq(lastIndex).css('z-index', '0');
                 }
 
-                $('.panel').eq(indx).css({ 'display': 'block', 'z-index': '1' });
-                var item = $('.panel').eq(indx);
+                panel.eq(indx).css({ 'display': 'block', 'z-index': '1' });
+                var item = panel.eq(indx);
 
                 var max = 4;
                 var min = 1;
@@ -267,9 +269,6 @@
                 else if (indx == 1) {
                     item.css({ '-webkit-animation': 'mySlide 1s ease', '-moz-animation': 'mySlide 1s ease' });
                     item.find('.panel-item').css({ '-webkit-animation': 'mySlideText 1s ease', '-moz-animation': 'mySlideText 1s ease' });
-
-
-
 
                 }
                 else if (indx == 2) {
@@ -286,7 +285,7 @@
                 }
 
             });
-            $('.panel').on('animationend webkitAnimationEnd', function (event) {
+            panel.on('animationend webkitAnimationEnd', function (event) {
                 console.log('mytarget ' + event.target.className);
                 console.log(event.target.className.indexOf('panel') + ' ' + event.target.className.indexOf('panel-item'));
                 if (event.target.className.indexOf('panel') == 0 && (event.target.className.indexOf('panel-item') == -1))
@@ -297,9 +296,9 @@
                 console.log('lastIndex' + lastIndex);
                 if(lastIndex > -1)
                 {
-                    $('.panel').eq(Math.max(lastIndex, 0)).css('display', 'none');
+                    panel.eq(Math.max(lastIndex, 0)).css('display', 'none');
                     currentIndex = clicks.pop();
-                    $('.panel').eq(Math.max(currentIndex, 0)).removeAttr('style');
+                    panel.eq(Math.max(currentIndex, 0)).removeAttr('style');
                     lastIndex = currentIndex;
                 }
                 console.log('tester' + lastIndex);
