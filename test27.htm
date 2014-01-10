@@ -88,7 +88,7 @@
         }
 
         .panelLastOverlay {
-            -webkit-animation: overlayAnimate 0.9s ease;
+            -webkit-animation: overlayAnimate 2s ease;
         }
 
         .red {
@@ -201,6 +201,29 @@
             }
         }
 
+        @-webkit-keyframes mySlideTLBR {
+            from {
+                margin-left: -300px; margin-top:-300px;
+            }
+
+            to {
+                margin-left: 0px; margin-top:0px;
+            }
+        }
+        @-webkit-keyframes mySlideTLBRText {
+            from {
+                margin-left: 300px;
+                margin-top: 300px;
+            }
+
+            to {
+                margin-left: 0px;
+                margin-top: 0px;
+            }
+        }
+
+
+
         @-webkit-keyframes myHide {
             0% {
                 border: 1px solid red;
@@ -213,13 +236,28 @@
         }
 
         @-webkit-keyframes overlayAnimate {
-            from {
+            0% {margin-top: -300px;}
+            15% {
+                margin-top: 300px;
+            }
+
+            16% {
+                margin-top: -300px;
+            }
+            35% {
+                margin-top: 300px;
+            }
+            36% {
+                margin-top: -300px;
+            }
+            60% {
+                margin-top: 300px;
+            }
+            61% {
                 margin-top: -300px;
             }
 
-            to {
-                margin-top: 0px;
-            }
+            100% { margin-top: 0px;}
         }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -280,8 +318,10 @@
                     item.find('.panel-item').css({ '-webkit-animation': 'mySlideBTText 1s ease', '-moz-animation': 'mySlideBTText 1s ease' });
                 }
                 else {
-                    item.css({ '-webkit-animation': 'mySlide 1s ease', '-moz-animation': 'mySlide 1s ease' });
-                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideText 1s ease', '-moz-animation': 'mySlideText 1s ease' });
+                    //item.css({ '-webkit-animation': 'mySlide 1s ease', '-moz-animation': 'mySlide 1s ease' });
+                    //item.find('.panel-item').css({ '-webkit-animation': 'mySlideText 1s ease', '-moz-animation': 'mySlideText 1s ease' });
+                    item.css({ '-webkit-animation': 'mySlideTLBR 1s ease', '-moz-animation': 'mySlideTLBR 1s ease' });
+                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideTLBRText 1s ease', '-moz-animation': 'mySlideTLBRText 1s ease' });
                 }
 
             });
