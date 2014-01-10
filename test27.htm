@@ -4,189 +4,308 @@
 </head>
 <body>
     <h1>Experiment Example</h1>
-<ul id="move">
-<li><a href="javascript:void(0);">red</a></li>
-<li><a href="javascript:void(0);">blue</a></li>
-<li><a href="javascript:void(0);">teal</a></li>
-<li><a href="javascript:void(0);">purple</a></li>
-<li><a href="javascript:void(0);">grey</a></li>
-</ul>
-<br/>
-<br/>
-<div class="wrapper">
-
-
-	<div class="panel red"><br/><br/><p>top to bottom</p></div>
-	<div class="panel blue"><br/><br/><p>left to right</p></div>
-	<div class="panel teal"><br/><br/><p>right to left</p></div>
-	<div class="panel purple"><br/><br/><p>bottom to top</p></div>
-	<div class="panel grey"><br/><br/><p>fade in</p></div>
-	<div class="panelLast" style="background-color: rgba(0,0,0,0.5);margin-left:150px;width:150px;z-index:1"></div>
-	<div class="panelLast" style="position:relative;">
-				<div class="" 
-				style="border-radius:10px;width:20px;height:20px;background-color:#E8E8E8;border:1px solid #E8E8E8;z-index:1;position:relative;margin:0 auto">
-					test
-				</div>	
-	</div>
-
-</div>	
+    <ul id="move">
+        <li><a href="javascript:void(0);">red</a></li>
+        <li><a href="javascript:void(0);">blue</a></li>
+        <li><a href="javascript:void(0);">teal</a></li>
+        <li><a href="javascript:void(0);">purple</a></li>
+        <li><a href="javascript:void(0);">grey</a></li>
+    </ul>
+    <div class="wrapper">
+        <div class="panel red">
+            <div class="panel-item">
+                <br /><br /><p>top to bottom</p>
+                <p>
+                    Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red Red.
+                </p>
+            </div>
+        </div>
+        <div class="panel blue">
+            <div class="panel-item">
+                <br /><br /><p>left to right</p>
+                <p>
+                    Blue Blue Blue Blue Blue Blue Blue Blue clue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue Blue.
+                </p>
+            </div>
+        </div>
+        <div class="panel teal">
+            <div class="panel-item">
+                <br /><br /><p>right to left</p>
+                <p>
+                    Teal Teal Teal Teal Teal Teal Teal Teal clue Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal Teal.
+                </p>
+            </div>
+        </div>
+        <div class="panel purple">
+            <div class="panel-item">
+                <br /><br /><p>bottom to top</p>
+                <p>
+                    Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple Purple.
+                </p>
+            </div>
+        </div>
+        <div class="panel grey">
+            <div class="panel-item">
+                <br /><br /><p>fade in</p>
+                <p>
+                    Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey Grey.
+                </p>
+            </div>
+        </div>
+        <div class="panelLastOverlay" style="background-color: rgba(0,0,0,0.5);margin-left:150px;width:150px;z-index:1"></div>
+        <div class="panelLast" style="position:relative;">
+            <div class=""
+                 style="border-radius:10px;width:20px;height:20px;background-color:#E8E8E8;border:1px solid #E8E8E8;z-index:1;position:relative;margin:0 auto">
+                test
+            </div>
+        </div>
+    </div>
     <style>
         body {
         }
 
         a, a:hover {
         }
-		.panel, .panelLast {
-			border:1px solid #dcdcdc;
-			width:300px;
-			height:200px;
-			padding:10px;
-			text-align: center;
-			position:absolute;
-			transition:1s ease;
-		}
-		.panel p, .panelLast p
-		{
-			margin:0 auto;
-			
-		}
 
-		.red
-		{
-			background-color:#E54B4B;			
-		}
-		.blue
-		{
-			background-color:#0082C8;
-		}
-		.teal
-		{
-			background-color:#146F73;
-		}
-		.purple
-		{
-			background-color:#72616E;		
-		}
-		.grey
-		{
-			background-color:#C8C8C8;
-		}
-		li
-		{
-			display:inline-block;
-		}
-		.wrapper {
-			padding:10px;
-			border:1px solid #dcdcdc;
-			
-		
-		}
-		@-webkit-keyframes mySlide
-		{
-			from { margin-left:-300px; }
-			to { margin-left:0px;	}
-		}
-		
-		@-webkit-keyframes mySlideTB
-		{
-			from { margin-top:-200px; }
-			to { margin-top:0px;	}
-		}
-		
-		@-webkit-keyframes mySlideBT
-		{
-			from { margin-top:300px; }
-			to { margin-top:0px;	}
-		}		
-		
-		@-webkit-keyframes mySlideRL
-		{
-			from { margin-left:300px; }
-			to { margin-right:0px;	}
-		}		
-				
-		
-		@-webkit-keyframes myHide
-		{
-			0% { border:1px solid red; }
-			100% { border:5px solid black; display:none;	}
-		}		
+        .panel, .panelLast, .panelLastOverlay {
+            border: 1px solid #dcdcdc;
+            width: 300px;
+            height: 200px;
+            /*			padding:10px;*/
+            text-align: center;
+            position: absolute;
+            transition: 1s ease;
+            overflow: hidden;
+        }
 
-		
-		
-		//firefox
-		@-moz-keyframes mySlide
-		{
-			from { margin-left:-300px; }
-			to { margin-left:0px;	}
-		}
-		@-moz-keyframes myHide
-		{
-			0% { border:1px solid red; }
-			100% { border:5px solid black; display:none;	}
-		}		
-		
-		
-		
+            .panel p, .panelLast p {
+                margin: 0 auto;
+            }
+
+        .panel-item {
+            width: 300px;
+            position: absolute;
+        }
+
+        .panelLastOverlay {
+            -webkit-animation: overlayAnimate 0.9s ease;
+        }
+
+        .red {
+            background-color: #E54B4B;
+        }
+
+        .blue {
+            background-color: #0082C8;
+        }
+
+        .teal {
+            background-color: #146F73;
+        }
+
+        .purple {
+            background-color: #72616E;
+        }
+
+        .grey {
+            background-color: #C8C8C8;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        .wrapper {
+            padding: 10px;
+            border: 1px solid #dcdcdc;
+        }
+
+        @-webkit-keyframes mySlide {
+            from {
+                margin-left: -300px;
+            }
+
+            to {
+                margin-left: 0px;
+            }
+        }
+
+        @-webkit-keyframes mySlideText {
+            from {
+                margin-left: 300px;
+            }
+
+            to {
+                margin-left: 0px;
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes mySlideTB {
+            from {
+                margin-top: -200px;
+            }
+
+            to {
+                margin-top: 0px;
+            }
+        }
+
+        @-webkit-keyframes mySlideTBText {
+            from {
+                margin-top: 200px;
+            }
+
+            to {
+                margin-top: 0px;
+            }
+        }
+
+        @-webkit-keyframes mySlideBT {
+            from {
+                margin-top: 300px;
+            }
+
+            to {
+                margin-top: 0px;
+            }
+        }
+
+        @-webkit-keyframes mySlideBTText {
+            from {
+                margin-top: -300px;
+            }
+
+            to {
+                margin-top: 0px;
+            }
+        }
+
+        @-webkit-keyframes mySlideRL {
+            from {
+                margin-left: 300px;
+            }
+
+            to {
+                margin-right: 0px;
+            }
+        }
+
+        @-webkit-keyframes mySlideRLText {
+            from {
+                margin-left: -300px;
+            }
+
+            to {
+                margin-right: 0px;
+            }
+        }
+
+        @-webkit-keyframes myHide {
+            0% {
+                border: 1px solid red;
+            }
+
+            100% {
+                border: 5px solid black;
+                display: none;
+            }
+        }
+
+        @-webkit-keyframes overlayAnimate {
+            from {
+                margin-top: -300px;
+            }
+
+            to {
+                margin-top: 0px;
+            }
+        }
     </style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript">
-	$(function(){
-		//init
-		$('.panel').css({'display':'none'});
-		$('.panel').eq(0).css({'display':'block'});	
-		
-		zindx = 1;
-		currentIndex = 0;
-		lastIndex = 0;		
-		clicks = [];
-		
-		$('#move li a').on('click', function(){
-			var indx = $('#move li a').index($(this));			
-			if(lastIndex == -1 || clicks.length == 0)
-			{	
-				if(lastIndex == indx || clicks.length > 0)
-					return;			
-				clicks.push(indx);						
-			}
-			else
-			{
-				console.log(clicks);
-				return;
-			}
-			if(lastIndex >= 0)
-			{
-				$('.panel').eq(lastIndex).css('z-index','0');				
-			}
-			
-			$('.panel').eq(indx).css({'display':'block','z-index':'1'});
-			
-			if(indx == 0)
-				$('.panel').eq(indx).css({'-webkit-animation':'mySlideTB 1s ease','-moz-animation':'mySlideTB 1s ease'});
-			else if(indx == 1)
-				$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});			
-			else if(indx == 2)
-				$('.panel').eq(indx).css({'-webkit-animation':'mySlideRL 1s ease','-moz-animation':'mySlideRL 1s ease'});				
-			else if(indx == 3)
-				$('.panel').eq(indx).css({'-webkit-animation':'mySlideBT 1s ease','-moz-animation':'mySlideBT 1s ease'});								
-			else if(indx == 4)				
-				$('.panel').eq(indx).css({'-webkit-animation':'mySlide 1s ease','-moz-animation':'mySlide 1s ease'});													
+    <script type="text/javascript">
+        $(function () {
+            //init
+            $('.panel').css({ 'display': 'none' });
+            $('.panel').eq(0).css({ 'display': 'block' });
+            $('.panel').eq(0).css({ '-webkit-animation': 'mySlide 1s ease', '-moz-animation': 'mySlide 1s ease', '-moz-animation-fill-mode': 'forwards', '-webkit-animation-fill-mode': 'forwards' });
+            $('.panel').eq(0).find('.panel-item').css({ '-webkit-animation': 'mySlideText 1s ease', '-moz-animation': 'mySlideText 1s ease' });
 
-		});
-		$('.panel').on('animationend webkitAnimationEnd',function(event){
-			clearPanel();
-		});
-		
-		function clearPanel()
-		{
-			$('.panel').eq(Math.max(lastIndex,0)).css('display','none');
-			currentIndex = clicks.pop();
-			$('.panel').eq(Math.max(currentIndex,0)).removeAttr('style');			
-			lastIndex = currentIndex;
-			console.log('tester' + lastIndex);		
-			console.log('clicks ' + clicks);					
-		}
-	});
-	</script>
+            zindx = 1;
+            currentIndex = 0;
+            lastIndex = -1;
+            clicks = [];
+
+            $('#move li a').on('click', function () {
+                var indx = $('#move li a').index($(this));
+                if (lastIndex == -1)
+                    lastIndex = 0;
+                if (clicks.length == 0) {
+                    if (lastIndex == indx || clicks.length > 0)
+                        return;
+                    clicks.push(indx);
+                }
+                else {
+                    console.log(clicks);
+                    return;
+                }
+                if (lastIndex > -1) {
+                    $('.panel').eq(lastIndex).css('z-index', '0');
+                }
+
+                $('.panel').eq(indx).css({ 'display': 'block', 'z-index': '1' });
+                var item = $('.panel').eq(indx);
+
+                var max = 4;
+                var min = 1;
+                var num = Math.floor(Math.random() * (max - min + 1)) + min;
+                //console.log('num ' + num);
+                if (indx == 0) {
+                    item.css({ '-webkit-animation': 'mySlideTB 1s ease', '-moz-animation': 'mySlideTB 1s ease' });
+                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideTBText 1s ease', '-moz-animation': 'mySlideTBText 1s ease' });
+                }
+                else if (indx == 1) {
+                    item.css({ '-webkit-animation': 'mySlide 1s ease', '-moz-animation': 'mySlide 1s ease' });
+                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideText 1s ease', '-moz-animation': 'mySlideText 1s ease' });
+
+
+
+
+                }
+                else if (indx == 2) {
+                    item.css({ '-webkit-animation': 'mySlideRL 1s ease', '-moz-animation': 'mySlideRL 1s ease' });
+                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideRLText 1s ease', '-moz-animation': 'mySlideRLText 1s ease' });
+                }
+                else if (indx == 3) {
+                    item.css({ '-webkit-animation': 'mySlideBT 1s ease', '-moz-animation': 'mySlideBT 1s ease' });
+                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideBTText 1s ease', '-moz-animation': 'mySlideBTText 1s ease' });
+                }
+                else {
+                    item.css({ '-webkit-animation': 'mySlide 1s ease', '-moz-animation': 'mySlide 1s ease' });
+                    item.find('.panel-item').css({ '-webkit-animation': 'mySlideText 1s ease', '-moz-animation': 'mySlideText 1s ease' });
+                }
+
+            });
+            $('.panel').on('animationend webkitAnimationEnd', function (event) {
+                console.log('mytarget ' + event.target.className);
+                console.log(event.target.className.indexOf('panel') + ' ' + event.target.className.indexOf('panel-item'));
+                if (event.target.className.indexOf('panel') == 0 && (event.target.className.indexOf('panel-item') == -1))
+                    clearPanel();
+            });
+
+            function clearPanel() {
+                console.log('lastIndex' + lastIndex);
+                if(lastIndex > -1)
+                {
+                    $('.panel').eq(Math.max(lastIndex, 0)).css('display', 'none');
+                    currentIndex = clicks.pop();
+                    $('.panel').eq(Math.max(currentIndex, 0)).removeAttr('style');
+                    lastIndex = currentIndex;
+                }
+                console.log('tester' + lastIndex);
+                console.log('clicks ' + clicks);
+            }
+        });
+    </script>
 </body>
 </html>
