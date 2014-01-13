@@ -1,0 +1,150 @@
+<html>
+<head>
+    <title>test</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            angle = 120;//for 3 sides
+            r= 8.66;//  15px/tan(60) 
+
+        //event handlers
+            $('#t').hover(function () {
+
+                $('.test').each(function () {
+                    var indx = $('.test').index(this)*(-1) + 1;
+                    $(this).css({ '-webkit-transform': 'rotateX(' + indx * angle + 'deg)  translateZ(' + r +'px)', 'opacity': '1' });
+                    console.log('indx'+ indx);
+                });
+        },
+            function () {
+                setNav();
+
+            });
+
+
+        function setNav(){
+            $('.test').each(function () {
+                var indx = $('.test').index(this);
+                //indx = indx + spin;
+                //var opac = indx % 4 == 0 ? 1 : 0.2;
+                //console.log(opac + 't' + indx % 360);
+                $(this).css({ '-webkit-transform': 'rotatex(-' + indx * angle + 'deg) translateZ(' + r +'px)', 'opacity': '1' });
+            });
+        };
+        setNav();
+
+
+    });
+    </script>
+
+</head>
+<body>
+    <h1>Hover Rotate Example</h1>
+
+
+
+    <div id="t" style="">
+        <div class="test">test1</div>
+        <div class="test">test2</div>
+
+        <br/>
+    </div>
+
+
+        <hr />
+        <ul style="display:none">
+            <li>
+
+
+                <a href="javascript:void(0)">
+                    <div class="nav1">
+                        test1
+                    </div>
+                    <div class="nav2">
+                        1tset
+                    </div>
+                </a>
+
+
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <div class="nav1">
+                    test2
+                </div>
+                <div class="nav2">
+                    2tset
+                </div>
+            </a>
+        </li>
+        <li><a href="javascript:void(0)">test3</a></li>
+        <li><a href="javascript:void(0)">test4</a></li>
+        <li><a href="javascript:void(0)">test5</a></li>
+    </ul>
+    <br /><br /><br />
+
+    <style>
+        #t {
+            border: 3px solid yellow;
+            position:relative;
+            height:30px;
+        }
+        .test {
+            border: 1px solid blue;
+            position: absolute;
+            transition: 1s ease;
+            height: 30px;
+            -webkit-backface-visibility:hidden;
+        }
+
+
+        body {
+            font-family: arial,sans-serif;
+        }
+
+        h1 {
+        }
+
+        a .nav1 {
+            border: 1px solid #000;
+        }
+
+        .nav2 {
+            border: 1px solid #ff6a00;
+        }
+
+        li {
+            border: 1px solid blue;
+            transition: 0.8s ease transform;
+            list-style-type: none;
+            -webkit-transform: rotateX(0deg);
+        }
+
+
+
+            li:hover {
+                /*        -webkit-animation: navRotate 1s ease;
+                transition: 0.8s ease transform;
+                border:5px solid red;
+        */
+            }
+
+            li a {
+                border: 1px solid red;
+            }
+
+
+        @-webkit-keyframes navRotate {
+            from {
+                -webkit-transform: rotateX(0deg);
+            }
+
+            to {
+                -webkit-transform: rotateX(120deg);
+            }
+        }
+    </style>
+</body>
+</html>
