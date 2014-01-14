@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>test</title>
+    <title>Hover Rotate Example</title>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -17,11 +17,16 @@
                     $(this).css({ '-webkit-transform': 'rotateX(' + indx * angle + 'deg)  translateZ(' + r +'px)', 'opacity': '1' });
                     console.log('indx'+ indx);
                 });
-        },
+            },
             function () {
                 setNav();
-
             });
+            $('#m').hover(function () {
+                $('.mchild').removeClass('rotateBack').addClass('rotate');
+            }, function () {
+                $('.mchild').removeClass('rotate').addClass('rotateBack');
+            });
+
 
 
         function setNav(){
@@ -44,59 +49,98 @@
     <h1>Hover Rotate Example</h1>
 
 
+    <i>
+        {
+        position: absolute;
+        -webkit-transform: rotateX(120deg) translateZ(8.66px);
+        opacity:1;
+        }
 
+    </i>
+    <br />
     <div id="t" style="">
         <div class="test">test1</div>
         <div class="test">test2</div>
+        <br />
+    </div>
+    <br />
+    <br />
+    <hr />
 
-        <br/>
+    <i>
+        {
+            -webkit-transform: perspective(800) rotate3d(1, 0, 0,  -90deg);
+        }
+    </i>
+    <div id="m" style="">
+        <div class="mchild" style="">test1</div>
+        <!--<div class="m2">test2</div>-->
+        <br />
     </div>
 
-
-        <hr />
-        <ul style="display:none">
-            <li>
-
-
-                <a href="javascript:void(0)">
-                    <div class="nav1">
-                        test1
-                    </div>
-                    <div class="nav2">
-                        1tset
-                    </div>
-                </a>
-
-
-        </li>
-        <li>
-            <a href="javascript:void(0)">
-                <div class="nav1">
-                    test2
-                </div>
-                <div class="nav2">
-                    2tset
-                </div>
-            </a>
-        </li>
-        <li><a href="javascript:void(0)">test3</a></li>
-        <li><a href="javascript:void(0)">test4</a></li>
-        <li><a href="javascript:void(0)">test5</a></li>
-    </ul>
-    <br /><br /><br />
 
     <style>
         #t {
             border: 3px solid yellow;
-            position:relative;
-            height:30px;
+            position: relative;
+            height: 30px;
+            background-color: #606060;
+            padding: 10px;
         }
+
+            #t:hover {
+                cursor: pointer;
+            }
+
+
+
         .test {
             border: 1px solid blue;
             position: absolute;
-            transition: 1s ease;
+            transition: -webkit-transform 0.5s ease;
             height: 30px;
-            -webkit-backface-visibility:hidden;
+            -webkit-backface-visibility: hidden;
+            background-color: red;
+            color: #fff;
+            width: 100px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 19px;
+        }
+
+
+        #m {
+            border: 3px solid yellow;
+            position: relative;
+            height: 100px;
+            background-color: #606060;
+            padding: 10px;
+        }
+
+
+        .mchild {
+            border: 1px solid rgb(255,111,111);
+            position: absolute;
+            height: 100px;
+            /*            -webkit-backface-visibility: hidden;*/
+            background-color: rgb(255,111,111);
+            color: #fff;
+            width: 100px;
+            text-align: center;
+            opacity: 0.9;
+        }
+        .rotate {
+            -webkit-transition: 1s ease;
+            -webkit-transform: perspective(800) rotate3d(1, 0, 0, 90deg);
+            -webkit-transform-origin: 50% 100%;
+            -webkit-transform-style: preserve-3d;
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: 250px 310px;
+        }
+        .rotateBack {
+            -webkit-transition: 1s ease;
+            -webkit-transform: perspective(800) rotate3d(1, 0, 0, 0deg);
+            -webkit-transform-origin: 50% 100%;
         }
 
 
@@ -106,45 +150,7 @@
 
         h1 {
         }
-
-        a .nav1 {
-            border: 1px solid #000;
-        }
-
-        .nav2 {
-            border: 1px solid #ff6a00;
-        }
-
-        li {
-            border: 1px solid blue;
-            transition: 0.8s ease transform;
-            list-style-type: none;
-            -webkit-transform: rotateX(0deg);
-        }
-
-
-
-            li:hover {
-                /*        -webkit-animation: navRotate 1s ease;
-                transition: 0.8s ease transform;
-                border:5px solid red;
-        */
-            }
-
-            li a {
-                border: 1px solid red;
-            }
-
-
-        @-webkit-keyframes navRotate {
-            from {
-                -webkit-transform: rotateX(0deg);
-            }
-
-            to {
-                -webkit-transform: rotateX(120deg);
-            }
-        }
     </style>
 </body>
+
 </html>
