@@ -1,35 +1,46 @@
 <html>
 <head>
-<title>Media Queries example</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <title>Media Queries example</title>
 
-<script type="text/javascript">
+    <link rel="stylesheet" media="screen and (min-height: 500px)" href="mediumheight.css" />
 
-$(function(){
-	console.log('test');
-});
-</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#foo').html('browser height is ' + $(window).height());
+            
+        });
+
+        function refresh() {
+            $('#foo').html('browser height is ' + $(window).height());
+            return false;
+        }
+    </script>
     <style>
         body {
             font-family: arial,sans-serif;
             font-size: 12px;
         }
+
         .panel {
-            min-height: 600px;
-            border: 1px solid red;
+            min-height: 700px;
             width: 100%;
+            position: fixed;
+            background-color: red;
+            opacity:0.5;
         }
     </style>
 
 </head>
 <body>
-<h1>Media Queries example</h1>
+    <h1>Media Queries example</h1>
+    <a href="javascript:refresh();">click me</a><br/>
+    <div id="foo" class="panel">
+        &nbsp;
 
-<div class="panel">
-&nbsp;
 
-
-</div>
+    </div>
 
 </body>
 </html>
