@@ -1,0 +1,171 @@
+<html>
+<head>
+    <title>Perspective rotate translateZ Example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        $(function () {
+            //init nav
+            $('#nav li').hover(function () {
+                $(this).find('.nav-item').eq(0).removeClass('state1').addClass('state2');
+                $(this).find('.nav-item').eq(1).removeClass('state3').addClass('state1');
+            }, function () {
+                $(this).find('.nav-item').eq(0).removeClass('state2').addClass('state1');
+                $(this).find('.nav-item').eq(1).removeClass('state1').addClass('state3');
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul#nav {
+            padding: 0px;
+            margin: 0px;
+            background-color: #222;
+            border-top: 1px solid #222;
+            height: 30px;
+        }
+        #nav a {
+            text-decoration:none;
+
+        }
+        #nav li {
+            position: relative;
+            padding: 0px;
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            background-color: #222;
+        }
+
+            #nav li:hover {
+            }
+
+        .nav-item {
+            text-transform: uppercase;
+            position: absolute;
+            line-height: 30px;
+            height: 30px;
+            vertical-align: middle;
+            text-align: center;
+            width: 100%;
+        }
+
+        #nav .white {
+            background-color: #fff;
+            color: #222222;
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        #nav .black {
+            background-color: #222;
+            color: #fff;
+            -moz-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .state1, .state2, .state3 {
+            -moz-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            -webkit-transition: 0.3s ease;
+            transition: 0.3s ease;
+        }
+        /* r = (30px/2)/tan(60) = ~8.66px  */
+        .state1 {
+            -moz-transform: perspective(350px) rotateX(0deg) translate3d(0,0, 9px);
+            -ms-transform: perspective(350px) rotateX(0deg) translate3d(0,0, 9px);
+            -o-transform: perspective(350px) rotateX(0deg) translate3d(0,0, 9px);
+            -webkit-transform: perspective(350px) rotateX(0deg) translate3d(0,0, 9px);
+            transform: perspective(350px) rotateX(0deg) translate3d(0,0, 9px);
+            -moz-transform-origin: 50% 100%;
+            -ms-transform-origin: 50% 100%;
+            -o-transform-origin: 50% 100%;
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+        }
+
+        .state2 {
+            -moz-transform: perspective(350px) rotateX(120deg) translate3d(0,0, 9px);
+            -ms-transform: perspective(350px) rotateX(120deg) translate3d(0,0, 9px);
+            -o-transform: perspective(350px) rotateX(120deg) translate3d(0,0, 9px);
+            -webkit-transform: perspective(350px) rotateX(120deg) translate3d(0,0, 9px);
+            transform: perspective(350px) rotateX(120deg) translate3d(0,0, 9px);
+            -moz-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+
+        .state3 {
+            -moz-transform: perspective(350px) rotateX(-120deg) translate3d(0,0, 9px);
+            -ms-transform: perspective(350px) rotateX(-120deg) translate3d(0,0, 9px);
+            -o-transform: perspective(350px) rotateX(-120deg) translate3d(0,0, 9px);
+            -webkit-transform: perspective(350px) rotateX(-120deg) translate3d(0,0, 9px);
+            transform: perspective(350px) rotateX(-120deg) translate3d(0,0, 9px);
+            -moz-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            -o-transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+
+        #nav, #nav a {
+            color: #ddd;
+        }
+
+        .headr {
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Perspective rotate translateZ Example</h1>
+    <header class="headr" style="">
+        <ul id="nav" style="">
+            <li>
+                <a href="javascript:void(0)">
+                    <div class="nav-item black state1">home</div>
+                    <div class="nav-item white state3">home</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <div class="nav-item black state1">test</div>
+                    <div class="nav-item white state3">test</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <div class="nav-item black state1">test</div>
+                    <div class="nav-item white state3">test</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <div class="nav-item black state1">test</div>
+                    <div class="nav-item white state3">test</div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">
+                    <div class="nav-item black state1">test</div>
+                    <div class="nav-item white state3">test</div>
+                </a>
+            </li>
+        </ul>
+    </header>
+</body>
+</html>
