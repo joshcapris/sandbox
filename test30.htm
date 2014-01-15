@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Perspective rotate translateZ Example</title>
+    <title>Perspective rotate translateZ Clean Example</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!--[if lt IE 9]>
          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -10,9 +10,12 @@
         $(function () {
             //init nav
             $('#nav li').hover(function () {
+                $(this).addClass('active');
                 $(this).find('.nav-item').eq(0).removeClass('state1').addClass('state2');
                 $(this).find('.nav-item').eq(1).removeClass('state3').addClass('state1');
             }, function () {
+                $(this).removeClass('active');
+                //$(this).css({'margin-bottom': '0px', 'border': 'none' });
                 $(this).find('.nav-item').eq(0).removeClass('state2').addClass('state1');
                 $(this).find('.nav-item').eq(1).removeClass('state1').addClass('state3');
             });
@@ -46,7 +49,10 @@
             height: 30px;
             background-color: #222;
         }
-
+        #nav .active {
+            margin-bottom: -5px; 
+            border-bottom: 5px solid #dcdcdc;
+        }
             #nav li:hover {
             }
 
@@ -121,7 +127,9 @@
             -webkit-transform-origin: 50% 50%;
             transform-origin: 50% 50%;
         }
+        .active {
 
+        }
         #nav, #nav a {
             color: #ddd;
         }
@@ -132,7 +140,7 @@
     </style>
 </head>
 <body>
-    <h1>Perspective rotate translateZ Example</h1>
+    <h1>Perspective rotate translateZ Clean Example</h1>
     <header class="headr" style="">
         <ul id="nav" style="">
             <li>
