@@ -2,22 +2,7 @@
 <head>
     <title>HTML & validation</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
-function test()
-{
-	console.log('test');
-	$('#btnSubmit').click();
-	
-}
-	
-	
-		$(function(){
-		
-		
-		});
-	
-    </script>
+
     <style>
         body {
             font-family: arial,sans-serif;
@@ -37,7 +22,7 @@ function test()
 </head>
 <body>
     <h1>HTML & validation</h1>
-<form>
+<form id='testform' name='testform'>
 
 
 	<input id="txtTest" type="text" class="contactTxt" required /><br/>
@@ -47,6 +32,25 @@ function test()
 	<input id="btnSubmit" type="submit" value="submit"  />
 	<input type="button" value="button" onclick="javascript:test()"/>
 </form>	
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+		function test()
+		{
+			//console.log('test');
+			$('#btnSubmit').click();
+			
+		}
+	
+	
+		document.getElementById('testform').onsubmit = function(e){
+			console.log('prevent');
+			e.preventDefault();
+		}
+	
+    </script>
 
 </body>
 </html>
