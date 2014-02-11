@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>HTML & validation</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+function test()
+{
+	console.log('test');
+	$('#btnSubmit').click();
+	
+}
+	
+	
+		$(function(){
+		
+		
+		});
+	
+    </script>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		.contactTxt
+		{
+			background-color: #EEE;		
+		}
+		.contactTxt:focus
+		{
+			background-color: #9ECA3B;
+		}
+
+    </style>
+
+</head>
+<body>
+    <h1>HTML & validation</h1>
+<form>
+
+
+	<input id="txtTest" type="text" class="contactTxt" required /><br/>
+	
+	<input id="txtTest2" type="text" class="contactTxt" required />	<br/>
+	
+	<input id="btnSubmit" type="submit" value="submit"  />
+	<input type="button" value="button" onclick="javascript:test()"/>
+</form>	
+
+</body>
+</html>
