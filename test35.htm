@@ -26,32 +26,27 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
 	$(function(){
+		//change border on click
 		var nav = $('.nav');
 		nav.on('click', function(){
 			var indx = nav.index($(this));
-			
-			
-			
+			nav.css('border','none');											
+			nav.eq(indx).css('border','1px solid red');								
 		});
 
+		//initial border based on url
+		var url = window.location.href;    		
+		if (url.indexOf('#') > -1)
+		{
+			nav.css('border','none');		
 			nav.each(function(){
 				var indx = nav.index($(this));			
-				console.log($(this).html() + ' index ' + indx	);
-			});
-
-		
-		//write to console what page you are on	
-		var url = window.location.href;    
-		console.log('url'+ url);
-
-		if (url.indexOf('#') > -1){
-			console.log('#exists');
-
-		}else{
-			console.log('#notexists');
-		}
-		//window.location.href = url;
-		
+				if(url.indexOf($(this).html()) != -1)
+				{
+					nav.eq(indx).css('border','1px solid red');
+				}			
+			});		
+		}	
 	});
     </script>
 
