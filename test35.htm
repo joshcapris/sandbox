@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Append URL Example</title>
+
+
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		
+    </style>
+
+</head>
+<body>
+    <h1>Append URL Example</h1>
+
+<a href="#link1" class="nav">link1</a> 
+<a href="#link2" class="nav">link2</a>
+<a href="#link3" class="nav">link3</a>
+<a href="#link4" class="nav">link4</a>
+<br/>
+
+
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		var nav = $('.nav');
+		nav.on('click', function(){
+			var indx = nav.index($(this));
+			
+			
+			
+		});
+
+			nav.each(function(){
+				var indx = nav.index($(this));			
+				console.log($(this).html() + ' index ' + indx	);
+			});
+
+		
+		//write to console what page you are on	
+		var url = window.location.href;    
+		console.log('url'+ url);
+
+		if (url.indexOf('#') > -1){
+			console.log('#exists');
+
+		}else{
+			console.log('#notexists');
+		}
+		//window.location.href = url;
+		
+	});
+    </script>
+
+</body>
+</html>
