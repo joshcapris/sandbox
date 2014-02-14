@@ -12,10 +12,10 @@
 <body>
     <h1>Sound Example</h1>
 
-<a href="#link1" class="nav">sound1</a> 
-<a href="#link2" class="nav">sound2</a>
-<a href="#link3" class="nav">sound3</a>
-<a href="#link4" class="nav">sound4</a>
+<a href="javascript:void(0)" class="nav" style="border:1px solid #dcdcdc">sound1</a> 
+<a href="javascript:void(0)" class="nav" style="border:1px solid #dcdcdc">sound2</a>
+<a href="javascript:void(0)" class="nav" style="border:1px solid #dcdcdc">sound3</a>
+<a href="javascript:void(0)" class="nav" style="border:1px solid #dcdcdc">sound4</a>
 <br/>
 
 
@@ -23,15 +23,75 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
 	$(function(){
-		$('a').on('hover',function(){
+		var mySound0 = soundManager.createSound({
+		  id: 'aSound0', // optional: provide your own unique id
+		  url: 'sound/glass0.mp3'
+		  // onload: function() { console.log('sound loaded!', this); }
+		  // other options here..
+		});	
+	
+		var mySound1 = soundManager.createSound({
+		  id: 'aSound1', // optional: provide your own unique id
+		  url: 'sound/glass1.mp3'
+		  // onload: function() { console.log('sound loaded!', this); }
+		  // other options here..
+		});	
+
+		var mySound2 = soundManager.createSound({
+		  id: 'aSound2', // optional: provide your own unique id
+		  url: 'sound/glass2.mp3'
+		  // onload: function() { console.log('sound loaded!', this); }
+		  // other options here..
+		});	
+
+		var mySound3 = soundManager.createSound({
+		  id: 'aSound3', // optional: provide your own unique id
+		  url: 'sound/glass3.mp3'
+		  // onload: function() { console.log('sound loaded!', this); }
+		  // other options here..
+		});			
+	
+	
+		$('.nav').hover(function(){		
+			var i = $('.nav').index($(this));
+			console.log('in' + i);
+			$(this).css({'border':'1px solid red'});		
 			
-		
-		});
-	
-	
-	
+			soundManager.play('aSound'+ i);			
+			//mySound.play();						
+		}, function(){
+			console.log('out');		
+			$(this).css({'border':'1px solid #DCDCDC'});				
+		});	
 	});
     </script>
 
+	<!-- configure SM2 for your use -->
+	<script type="text/javascript">
+	soundManager.setup({
+	  // location: path to SWF files, as needed (SWF file name is appended later.)
+	  url: 'swf/',
+	  // optional: version of SM2 flash audio API to use (8 or 9; default is 8 if omitted, OK for most use cases.)
+	  // flashVersion: 9,
+	  // use soundmanager2-nodebug-jsmin.js, or disable debug mode (enabled by default) after development/testing
+	  // debugMode: false,
+	  // good to go: the onready() callback
+	  onready: function() {
+		// SM2 has started - now you can create and play sounds!
+		var mySound = soundManager.createSound({
+		  id: 'aSound', // optional: provide your own unique id
+		  url: 'sound/glass0.mp3'
+		  // onload: function() { console.log('sound loaded!', this); }
+		  // other options here..
+		});
+		//mySound.play();
+	  },
+	  // optional: ontimeout() callback for handling start-up failure
+	  ontimeout: function() {
+		// Hrmm, SM2 could not start. Missing SWF? Flash blocked? No HTML5 audio support? Show an error, etc.?
+		// See the flashblock demo when you want to start getting fancy.
+	  }
+	});
+	</script>		
 </body>
 </html>
