@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Span Example</title>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		
+    </style>
+</head>
+<body>
+    <h1>Span Example</h1>
+
+
+<ul id="roles" style="display:none">
+	<li>test1</li>
+	<li>test2</li>
+	<li>test3</li>
+	<li>test4</li>
+	<li>test5</li>
+</ul>
+<br/>
+	
+	<div id="test" style="border:1px solid none;width:200px;display:inline-block">
+	start
+	</div>
+	<div id="test-mask" style="position:absolute;border:1px solid none;width:500px;display:inline-block">
+	&nbsp;
+	</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		i = 0;
+		
+		window.setInterval(function(){shuffleRoles()}, 3000);
+		function shuffleRoles(){
+			var len = $('ul#roles li').size() - 1;
+			var t = $('ul#roles li').eq(i).html();			
+			$('#test').html(t);
+			if(len == i)
+				i = 0;
+			else
+				i = i+1;						 						
+		}
+	});
+    </script>
+<style>
+#test-mask
+{
+	z-index:1;
+	background-color:#fff;
+	-webkit-animation:move 3s infinite 1.5s;
+}
+@-webkit-keyframes move
+{
+	0%{	left:250px;}
+	50% {left:0px}
+	100%{left:250px;}	
+}
+
+</style>
+
+
+</body>
+</html>
