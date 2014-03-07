@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Span Example 2</title>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		
+    </style>
+</head>
+<body>
+    <h1>Span Example 2</h1>
+
+
+<ul id="roles" style="display:none">
+	<li>this is a test 1</li>
+	<li>this is the longest sentence 2</li>
+	<li>something 3</li>
+	<li>short 4</li>
+	<li>hello my name is 5</li>
+</ul>
+<br/>
+	
+	<div id="test" style="border:1px solid blue;width:200px;display:inline-block">
+	start
+	</div>
+	<div id="test-mask" style="position:absolute;border:1px solid red;width:500px;display:inline-block;left:250px">
+	&nbsp;
+	</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		i = 0;
+		
+		window.setInterval(function(){shuffleRoles()}, 3000);
+		function shuffleRoles(){
+		console.log('now');
+			var len = $('ul#roles li').size() - 1;
+			var t = $('ul#roles li').eq(i).html();			
+			$('#test').html(t);
+			if(len == i)
+				i = 0;
+			else
+				i = i+1;						 						
+		}
+	});
+    </script>
+<style>
+#test-mask
+{
+	z-index:1;
+	background-color:#fff;
+/*	transition:all 1s;*/
+/*	-webkit-animation:move 6s infinite 3s;*/
+}
+
+@-webkit-keyframes move
+{
+	0%{	left:250px;}
+	25%{left:250px;}
+	50% {left:0px;}
+	51% {left:0px;}	
+	75% {left:250px;}
+	100%{left:250px;}	
+}
+
+
+</style>
+
+
+</body>
+</html>
