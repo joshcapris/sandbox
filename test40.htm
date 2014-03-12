@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>News Ticker Example</title>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		
+    </style>
+</head>
+<body>
+    <h1>News Ticker Example</h1>
+
+<div id="nt-example1-container">	
+	<span class="" id="nt-example1-prev">prev</span>		
+		<ul id="nt-example1">
+			<li>test1</li>
+			<li>test2</li>
+			<li>test3</li>
+			<li>test4</li>
+			<li>test5</li>
+			<li>test6</li>
+			<li>test7</li>	
+		</ul>
+	<span class="" id="nt-example1-next">next</span>		
+</div>	
+
+	
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.newsTicker.js"></script>	
+    <script type="text/javascript">
+	$(function(){
+		//console.log('tester');			
+		var nt_example1 = $('#nt-example1').newsTicker({
+		row_height: 80,
+		max_rows: 3,
+		duration: 4000,
+		prevButton: $('#nt-example1-prev'),
+		nextButton: $('#nt-example1-next')
+		});				
+	});
+    </script>
+<style>
+
+#nt-example1 {
+	max-width: 620px;
+	margin: auto;
+}
+
+#nt-example1-container {
+	text-align: center;
+}
+
+#nt-example1-container i {
+	font-size: 36px;
+	margin: 8px;
+	cursor: pointer;
+	-webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#nt-example1-container i:hover {
+	color: #333;
+}
+
+#nt-example1 li {
+	color: #4e4e4e;
+	background: #F2F2F2;
+	overflow: hidden;
+	height: 80px;
+	padding: 10px;
+	line-height: 30px;
+	list-style: none;
+	font-size: 24px;
+	text-align: left;
+	border-bottom: 1px dotted #2c8162;
+}
+
+#nt-example1 li:hover {
+	background: #FFF;
+}
+
+
+</style>
+
+
+</body>
+</html>
