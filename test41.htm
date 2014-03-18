@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Why Me Example</title>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		
+    </style>
+</head>
+<body>
+    <h1>Why Me Example</h1>
+
+
+SOMETHING 1<br/>
+<div id="first-bar" class="bars">
+</div>
+SOMETHING 2<br/>
+<div id="second-bar" class="bars">
+</div>
+SOMETHING 3<br/>
+<div id="third-bar" class="bars">
+</div>
+<br/>
+
+
+<a id="click-me" href="javascript:void(0);">refresh</a>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		console.log('test');
+		
+		$('#click-me').click(function(){
+			//$('#first-bar').css({'transition':'2s ease','width':'700px'});
+ 			//$('#first-bar').css({'-webkit-animation':'first-grow 2s ease'}); 
+			$('#first-bar').addClass('test');
+		});
+		
+	});
+    </script>
+<style>
+
+.bars
+{
+	box-shadow: rgba(0,0,0,0.075) 0 0 0 0.16667em inset;
+	display:block;	
+	height:50px;	
+}
+
+#first-bar, .test
+{
+	background-color:#8981E4;
+	width:300px;
+	-webkit-animation: first-grow 2s ease;	
+}
+
+@-webkit-keyframes first-grow
+{
+	0%{ width:0px;}
+	100%{ width:300px;}
+}
+
+#second-bar
+{
+	background-color:#FE7C60;
+	width:200px;
+	-webkit-animation: second-grow 2s ease;	
+}
+
+@-webkit-keyframes second-grow
+{
+	0%{ width:0px;}
+	100%{ width:200px;}
+}
+
+#third-bar
+{
+	background-color:#6BD57E;
+	width:180px;
+	-webkit-animation: third-grow 2s ease;	
+}
+
+@-webkit-keyframes third-grow
+{
+	0%{ width:0px;}
+	100%{ width:180px;}
+}
+
+</style>
+
+
+</body>
+</html>
