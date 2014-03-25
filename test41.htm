@@ -12,18 +12,40 @@
 <body>
     <h1>Why Me Example</h1>
 
+<p>My Toolbox</p>
+<span style="">noob meh not bad pretty good amazing</span>
 
-SOMETHING 1<br/>
+ASP.Net&nbsp;&nbsp;(C#|VB)<br/>
 <div id="first-bar" class="bars">
 </div>
-SOMETHING 2<br/>
+SQL Server<br/>
 <div id="second-bar" class="bars">
 </div>
-SOMETHING 3<br/>
+JQuery<br/>
 <div id="third-bar" class="bars">
 </div>
 <br/>
+Html5 & Css3<br/>
+<div id="fourth-bar" class="bars">
+</div>
+<br/>
+PHP with MySql<br/>
+<div id="fifth-bar" class="bars">
+</div>
+<br/>
+Javascript<br/>
+<div id="six-bar" class="bars">
+</div>
+<br/>
+Cooking<br/>
+<div id="seven-bar" class="bars">
+</div>
+<br/>
 
+
+<p>
+
+</p>
 
 <a id="click-me" href="javascript:void(0);">refresh</a>
 
@@ -36,7 +58,6 @@ SOMETHING 3<br/>
 		$('#click-me').click(function(){
 			//$('#first-bar').css({'transition':'2s ease','width':'700px'});
  			//$('#first-bar').css({'-webkit-animation':'first-grow 2s ease'}); 
-			$('#first-bar').addClass('test');
 		});
 		
 	});
@@ -50,7 +71,7 @@ SOMETHING 3<br/>
 	height:50px;	
 }
 
-#first-bar, .test
+#first-bar
 {
 	background-color:#8981E4;
 	width:300px;
@@ -88,6 +109,46 @@ SOMETHING 3<br/>
 	0%{ width:0px;}
 	100%{ width:180px;}
 }
+
+#fourth-bar
+{
+	background-color:#FF6F6F;
+	width:210px;
+	-webkit-animation: fourth-grow 2s ease;	
+}
+
+@-webkit-keyframes fourth-grow
+{
+	0%{ width:0px;}
+	100%{ width:210px;}
+}
+
+#fifth-bar
+{
+	background-color:#FBCF61;
+	width:90px;
+	-webkit-animation: fifth-grow 2s ease;	
+}
+
+@-webkit-keyframes fifth-grow
+{
+	0%{ width:0px;}
+	100%{ width:90px;}
+}
+
+#seven-bar
+{
+	background-color:#FBCF61;
+	width:330px;
+	-webkit-animation: seven-grow 2s ease;	
+}
+
+@-webkit-keyframes seven-grow
+{
+	0%{ width:0px;}
+	100%{ width:330px;}
+}
+
 
 </style>
 
