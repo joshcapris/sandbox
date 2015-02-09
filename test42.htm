@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Bootstrap Stack Example</title>
+    <style>
+        body {
+            font-family: arial,sans-serif;
+            font-size: 12px;
+        }
+		
+    </style>
+</head>
+<body>
+    <h1>Bootstrap Stack Example</h1>
+
+	Hello this is a test!<br/><br/>	
+	
+
+	<div style="border:1px solid red" class="row text-center">
+		<div  class="cell col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<img src="images/milo.jpg"/><br/>1
+		</div>
+		
+		<div  class="cell col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<img src="images/milo.jpg"/><br/>2
+		</div>
+		
+		<div  class="cell col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<img src="images/milo.jpg"/><br/>3
+		</div>
+		
+		<div  class="cell col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			<img src="images/milo.jpg"/><br/>4
+		</div>	
+		
+	</div>
+
+    <link rel="stylesheet" media="screen, projection" href="css/bootstrap.css" /> 	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
+    <script src="js/bs/bootstrap.js"></script>		
+
+	
+	<style>
+		.cell {
+			border:1px solid #DCDCDC;		
+		}
+		.cell img {
+			margin:0 auto;
+			border:1px solid #000;
+			transition:1s ease all;
+		}
+		
+		.cell img:hover{
+			transform:rotate(360deg) scale(1.5);
+			z-index:100;
+			
+		}
+
+	</style>
+	
+	</body>
+</html>
